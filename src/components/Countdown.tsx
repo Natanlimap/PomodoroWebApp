@@ -5,10 +5,23 @@ import styles from '../styles/components/Countdown.module.css'
 
 let countdownTimeout: NodeJS.Timeout;
 
+
+
 export function Countdown(){
 
     const { startNewChallenges} = useContext(ChallengesContext)
 
+    const [interval, setInterval] = useState(1000)
+
+    if(document.addEventListener){
+        document.addEventListener("visibilitychange", function(){
+            if(interval == 1000){
+                setInterval(500)
+            }else{
+                setInterval(1000)
+            }
+        })
+    }
 
     const [time, setTime] = useState(60*25)
     const [isActive, setIsActive] = useState(false)
@@ -33,7 +46,7 @@ export function Countdown(){
         if(isActive && time > 0){
             countdownTimeout = setTimeout(() => {
                 setTime(time - 1)
-            }, 1000)
+            }, interval)
         }else if(isActive && time == 0){
             setHasFinished(true);
             setIsActive(false);
