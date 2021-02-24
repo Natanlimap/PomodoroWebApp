@@ -9,7 +9,7 @@ export function Countdown(){
     const { startNewChallenges} = useContext(ChallengesContext)
 
 
-    const [time, setTime] = useState(2)
+    const [time, setTime] = useState(60*25)
     const [isActive, setIsActive] = useState(false)
     const [hasFinished, setHasFinished] = useState(false)
 
