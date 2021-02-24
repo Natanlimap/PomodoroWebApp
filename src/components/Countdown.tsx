@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from 'react'
+import Head from 'next/head';
+import React, { useState, useEffect, useContext } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import styles from '../styles/components/Countdown.module.css'
 
@@ -42,6 +43,9 @@ export function Countdown(){
 
     return(
        <div>
+          <Head>
+                <title>Pomo {minutes}:{seconds}</title>
+         </Head>
             <div className={styles.countdownContainer}>
                 <div>
                     <span>{minuteLeft}</span>
