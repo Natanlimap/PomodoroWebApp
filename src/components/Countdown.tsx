@@ -44,7 +44,7 @@ export function Countdown(){
     return(
        <div>
           <Head>
-                <title>Pomo {minuteLeft}:{secondLeft}</title>
+                <title>Pomo {minuteLeft}{minuteRight}:{secondLeft}{secondRight}</title>
          </Head>
             <div className={styles.countdownContainer}>
                 <div>
