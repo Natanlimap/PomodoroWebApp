@@ -10,7 +10,14 @@ let countdownTimeout: NodeJS.Timeout;
 
 export function Countdown(){
 
-    const {minutes, seconds, hasFinished, isActive, resetCountdown, startCountdown } = useContext(CountdownContext);
+    const {
+        minutes,
+        seconds,
+        hasFinished,
+        isActive,
+        resetCountdown,
+        startCountdown 
+    } = useContext(CountdownContext);
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
