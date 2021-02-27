@@ -6,7 +6,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div className='wrapper'>
-      <Sidebar/>
       <UserProvider>
         <Component {...pageProps}/>
 

@@ -11,7 +11,7 @@ interface LoginProps{
 export default function LoginPage(props: LoginProps){
     const router = useRouter()
     const [invalidName, setInvalidName] = useState(false)
-    
+
     const {handleUserInput, addUserCookie, isUserValid} = useContext(UserContext)
 
     function handleSubmit(){

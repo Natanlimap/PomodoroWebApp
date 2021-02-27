@@ -31,7 +31,7 @@ export default function Home(props : HomeProps) {
     level={props.level}
     currentExperience={props.currentExperience}
     challengesCompleted={props.challengesCompleted}>
-
+      <Sidebar/>
       <div className={styles.container}>
         <ExperienceBar></ExperienceBar>
         <CountdownProvider>
