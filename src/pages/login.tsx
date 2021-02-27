@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
-import { useState } from "react";
-import {UserProvider} from '../contexts/UserContext'
+import {useRouter} from 'next/router';
+import { useContext, useState } from "react";
+import {UserContext, UserProvider} from '../contexts/UserContext'
 import styles from '../styles/pages/Login.module.css';
 
 interface LoginProps{
@@ -8,15 +9,24 @@ interface LoginProps{
 }
 
 export default function LoginPage(props: LoginProps){
-    const [username, setUsername] = useState("");
+    const router = useRouter()
+    const [invalidName, setInvalidName] = useState(false)
+    
+    const {handleUserInput, addUserCookie, isUserValid} = useContext(UserContext)
 
-    function handleUserInput(event){
-        setUsername(event.target.value);    
-        console.log(username);
+    function handleSubmit(){
+        if(isUserValid()){
+            console.log("valid")
+            addUserCookie()
+            router.push('/')
+        }
+        else{
+            setInvalidName(true);
+        }
+        
     }
 
     return(
-        <UserProvider>
             <div className={styles.background}>
                 <div className={styles.container}>
                     <div>
@@ -28,11 +38,11 @@ export default function LoginPage(props: LoginProps){
                         </p>
                         <div className={styles.inputGroup}>
                             <input onChange={handleUserInput} type='text' placeholder="Digite seu username" />
-                            <button><img src='/arrow.png' /></button>
+                            <button onClick={handleSubmit}><img src='/arrow.png' /></button>
                         </div>
+                        {invalidName && <span>Nome não válido</span>}
                     </div>
                 </div>
             </div>
-        </UserProvider>
     )
 }

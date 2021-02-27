@@ -1,4 +1,5 @@
 import { Sidebar } from '../components/Sidebar'
+import { UserProvider } from '../contexts/UserContext'
 import '../styles/global.css'
 
 function MyApp({ Component, pageProps }) {
@@ -6,7 +7,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className='wrapper'>
       <Sidebar/>
-      <Component {...pageProps}/>
+      <UserProvider>
+        <Component {...pageProps}/>
+
+      </UserProvider>
     </div>
  )
 }
