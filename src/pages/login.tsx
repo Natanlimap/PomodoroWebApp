@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { useState } from "react";
 import {UserProvider} from '../contexts/UserContext'
 import styles from '../styles/pages/Login.module.css';
 
@@ -7,6 +8,13 @@ interface LoginProps{
 }
 
 export default function LoginPage(props: LoginProps){
+    const [username, setUsername] = useState("");
+
+    function handleUserInput(event){
+        setUsername(event.target.value);    
+        console.log(username);
+    }
+
     return(
         <UserProvider>
             <div className={styles.background}>
@@ -19,7 +27,7 @@ export default function LoginPage(props: LoginProps){
                             Faça login com seu github para começar    
                         </p>
                         <div className={styles.inputGroup}>
-                            <input placeholder="Digite seu username" />
+                            <input onChange={handleUserInput} type='text' placeholder="Digite seu username" />
                             <button><img src='/arrow.png' /></button>
                         </div>
                     </div>
