@@ -1,0 +1,39 @@
+.card{
+    background-color: var(--blue-dark);
+    border-radius: 5px;
+    height: 8rem;
+    width: 100%;
+    margin-top: 10px;
+
+}
+.profileContainer{
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    margin-left: 10px;
+}
+
+.profileContainer > img{
+    width: 5.5rem;
+    height: 5.5rem;
+
+    border-radius: 50%
+}
+
+.profileContainer div{
+    margin-left: 1.5rem;
+}
+
+.profileContainer div strong{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white)
+}
+.profileContainer div p{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: var(--white)
+}
+.profileContainer div p img{
+    margin-right: 0.5rem;
+}

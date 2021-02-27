@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
 :root{
     --white: #fff !important;
     --background: #121214;

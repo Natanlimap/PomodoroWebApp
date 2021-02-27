@@ -1,0 +1,66 @@
+/* TODO: ajeitar paleta */
+
+.background{
+    background-color: var(--background);
+    width:100%;
+    height: 100vh;
+    background-image: url("/Simbolo.svg");
+    background-repeat: no-repeat;
+}
+.container{
+    padding: 50px;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    vertical-align: middle;
+}
+.container > div{
+    padding-top: 100px;
+    display: flex;
+    flex: 0.3;
+    height: 100%;
+    flex-direction: column;
+    margin-right: 10rem;
+}
+.container > div strong{
+    padding-top: 8rem;
+    font-size: 1.75rem;
+    color: var(--white);
+}
+.container > div p{
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+.container > div p img{
+    margin-right: 1rem;
+}
+
+.inputGroup{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 3rem;
+}
+.inputGroup input{
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+    border-radius: 5px 0px 0px 5px;
+    border: 0;
+    color: var(--white);
+    padding-left: 2rem;
+}
+.inputGroup input::placeholder{
+    color: #B2B9FF;
+    padding-left: 2rem;
+}
+.inputGroup button{
+    background-color: var(--blue-dark);
+    border: 0;
+    padding: 1rem 1.5rem;
+    font-size: 0;
+}

@@ -12,6 +12,7 @@ import { CountdownProvider } from '../contexts/CountdownContext'
 import React from 'react';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
 import { CompletedChallenges } from '../components/CompletedChallenges';
+import { Sidebar } from '../components/Sidebar';
 
 
 interface HomeProps{
@@ -22,7 +23,8 @@ interface HomeProps{
 }
 
 export default function Home(props : HomeProps) {
-  console.log(props)
+  
+
   return (
     <ChallengesProvider
     level={props.level}
@@ -30,7 +32,6 @@ export default function Home(props : HomeProps) {
     challengesCompleted={props.challengesCompleted}>
 
       <div className={styles.container}>
-      
         <ExperienceBar></ExperienceBar>
         <CountdownProvider>
           <section>

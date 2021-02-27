@@ -1,12 +1,13 @@
+import { Sidebar } from '../components/Sidebar'
 import '../styles/global.css'
-
-import {ChallengesProvider} from '../contexts/ChallengesContext'
-import { useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
 
   return (
-     <Component {...pageProps} />
+    <div className='wrapper'>
+      <Sidebar/>
+      <Component {...pageProps}/>
+    </div>
  )
 }
 
